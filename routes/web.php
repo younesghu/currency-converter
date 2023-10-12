@@ -13,4 +13,3 @@ use App\Http\Controllers\CurrencyConverterController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [CurrencyConverterController::class, 'index']);
