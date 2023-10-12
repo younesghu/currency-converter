@@ -10,7 +10,7 @@ class CurrencyConverter extends Model
     use HasFactory;
 
     protected $fillable = [
-        'amount', 'from_currency', 'to_currency',
+        'amount', 'from_currency', 'to_currency', 'result'
     ];
 
 }
