@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CurrencyConverter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class CurrencyConverterController extends Controller
 {
  //   protected $apiUrl = 'http://api.exchangeratesapi.io/v1/latest';
+
+
 
     public function getall()
     {
@@ -17,4 +20,14 @@ class CurrencyConverterController extends Controller
         return $jsonData;
     }
 
+    public function store(Request $request){
+        $data = $request->validate([
+            'amount' => 'required',
+            'from_currency' => 'required',
+            'to_currency' => 'required'
+        ]);
+
+        CurrencyConverter::create($data);
+        redirect('/');
+    }
 }

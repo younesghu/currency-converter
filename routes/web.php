@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CurrencyConverterController;
+use App\Models\CurrencyConverter;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,5 @@ use App\Http\Controllers\CurrencyConverterController;
 Route::get('/', function () {
     return view('main');
 });
+
+Route::post('/store', [CurrencyConverterController::class, 'store']);
