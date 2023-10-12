@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::post('/store', [CurrencyConverterController::class, 'store']);
+Route::post('/add', [CurrencyConverterController::class, 'store']);

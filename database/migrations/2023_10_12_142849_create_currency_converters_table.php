@@ -16,7 +16,7 @@ return new class extends Migration
             $table->float('amount', 8, 2);
             $table->string('from_currency');
             $table->string('to_currency');
-            $table->float('result', 8, 2)->nullable();
+            $table->float('result', 8, 2)->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('currencyconverters');
+        Schema::dropIfExists('currency_converters');
     }
 };

@@ -26,8 +26,13 @@ class CurrencyConverterController extends Controller
             'from_currency' => 'required',
             'to_currency' => 'required'
         ]);
+        $response = Http::get('http://api.exchangeratesapi.io/v1/latest?access_key=910504e83ebb5fc1b4eef142d91013db');
+        $jsonData = $response->json();
+
+        $data['result'] = $jsonData['rates'][$data['to_currency']] * $data['amount'];
 
         CurrencyConverter::create($data);
-        redirect('/');
+        return redirect('/');
     }
+
 }

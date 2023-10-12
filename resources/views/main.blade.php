@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Currency Converter</h1>
-    <form action="/store" method="post">
+    <form action="/add" method="post">
         @csrf
         <input type="text" name="amount" placeholder="Amount" required>
         <input type="text" name="from_currency" placeholder="from">
