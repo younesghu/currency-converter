@@ -8,7 +8,7 @@
     <form action="/add" method="post">
         @csrf
         <input type="text" name="amount" placeholder="Amount" required>
-        <input type="text" name="from_currency" placeholder="from">
+        <input type="text" name="from_currency" placeholder="" value="EUR">
         <input type="text" name="to_currency" placeholder="to">
 
         <button type="submit">Convert</button>
@@ -16,6 +16,5 @@
     <p>
 
     </p>
-
 </body>
 </html>
