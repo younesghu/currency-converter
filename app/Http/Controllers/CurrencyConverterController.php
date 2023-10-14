@@ -33,4 +33,7 @@ class CurrencyConverterController extends Controller
         return redirect('/');
     }
 
+    public function showall(){
+        return view('history');
+    }
 }

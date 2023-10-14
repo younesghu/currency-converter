@@ -12,9 +12,7 @@
         <input type="text" name="to_currency" placeholder="to">
 
         <button type="submit">Convert</button>
+        <a href="/history"> history</a>
     </form>
-    <p>
-
-    </p>
 </body>
 </html>
