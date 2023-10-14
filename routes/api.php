@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/currencies', [CurrencyConverterController::class, 'getall']);
 
+Route::get('/currency', [CurrencyConverterController::class, 'getdata']);

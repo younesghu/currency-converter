@@ -9,6 +9,11 @@
     <form action="/add" method="post">
         @csrf
         <input type="text" name="amount" placeholder="Amount" required>
+        {{-- @foreach ($jsonCurrencies as $jsonCurrency)
+            <select name="" id="EUR">
+                <option value="{{$jsonCurreny}}"></option>
+            </select>
+        @endforeach --}}
         <input type="text" name="from_currency" placeholder="" value="EUR">
         <input type="text" name="to_currency" placeholder="to">
 
@@ -50,4 +55,8 @@
         </table>
     </div>
 </body>
+{{-- <script>
+    var jsonData = @json($jsonCurrencies, JSON_UNESCAPED_UNICODE);
+</script> --}}
 </html>
+
