@@ -30,10 +30,13 @@ class CurrencyConverterController extends Controller
         $data['result'] = $jsonData['rates'][$data['to_currency']] * $data['amount'];
 
         CurrencyConverter::create($data);
+
         return redirect('/');
     }
 
-    public function showall(){
-        return view('history');
+        public function showhistory()
+    {
+        $currencyconverters = CurrencyConverter::all();
+        return view('main', compact('currencyconverters'));
     }
 }

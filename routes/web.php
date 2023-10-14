@@ -20,4 +20,4 @@ Route::get('/', function () {
 
 Route::post('/add', [CurrencyConverterController::class, 'store']);
 
-Route::get('/history', [CurrencyConverterController::class, 'showall']);
+Route::get('/', [CurrencyConverterController::class, 'showhistory']);

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="css/style.css">
     <title>Currency Converter</title>
 </head>
 <body>
@@ -12,7 +13,41 @@
         <input type="text" name="to_currency" placeholder="to">
 
         <button type="submit">Convert</button>
-        <a href="/history"> history</a>
     </form>
+    <br>
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    From
+                </th>
+                <th>
+                    To
+                </th>
+                <th>
+                    Result
+                </th>
+            </>
+            @foreach ($currencyconverters as $currencyconverter)
+            <tr>
+                <td>
+                    {{$currencyconverter['amount']}}
+                </td>
+                <td>
+                    {{$currencyconverter['from_currency']}}
+                </td>
+                <td>
+                    {{$currencyconverter['to_currency']}}
+                </td>
+                <td>
+                    {{$currencyconverter['result']}}
+                </td>
+            </tr>
+            @endforeach
+        </table>
+    </div>
 </body>
 </html>
