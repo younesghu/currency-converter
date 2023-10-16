@@ -4,4 +4,5 @@
     Anyways, here is a screen of how the interface looks like.
 </p>
 
-![forgit](https://github.com/younesghu/currency-converter/assets/142607475/c4bc82c1-775a-4800-863c-194f55101ef2)
+
+![forgit](https://github.com/younesghu/currency-converter/assets/142607475/884ef56e-e90d-43fd-8fb1-ff0f4e6fa71c)
