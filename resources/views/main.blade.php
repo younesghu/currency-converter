@@ -35,6 +35,9 @@
                 <th>
                     Result
                 </th>
+                <th>
+                    Delete
+                </th>
             </>
             @foreach ($currencyconverters as $currencyconverter)
             <tr>
@@ -50,6 +53,13 @@
                 <td>
                     {{$currencyconverter['result']}}
                 </td>
+                <form action="/delete/{{$currencyconverter->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <td>
+                        <button>x</button>
+                    </td>
+                </form>
             </tr>
             @endforeach
         </table>

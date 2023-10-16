@@ -18,16 +18,16 @@ class CurrencyConverterController extends Controller
         return $jsonData;
     }
 
-    public function getdata()
-    {
-        $response = Http::get('http://api.exchangeratesapi.io/v1/latest?access_key=910504e83ebb5fc1b4eef142d91013db');
+    // public function getdata()
+    // {
+    //     $response = Http::get('http://api.exchangeratesapi.io/v1/latest?access_key=910504e83ebb5fc1b4eef142d91013db');
 
-        $jsonData = $response->json();
-        $jsonCurrencies = $jsonData['rates'];
-        // $compactjsons = json_encode($jsonCurrencies, JSON_UNESCAPED_UNICODE);
-        // return response()->json(['data' => $compactjsons]);
-        return view('main', compact('jsonCurrencies'));
-    }
+    //     $jsonData = $response->json();
+    //     $jsonCurrencies = $jsonData['rates'];
+    //     $compactjsons = json_encode($jsonCurrencies, JSON_UNESCAPED_UNICODE);
+    //     return response()->json(['data' => $compactjsons]);
+    //     return view('main', compact('jsonCurrencies'));
+    // }
 
     public function store(Request $request){
         $data = $request->validate([
@@ -48,5 +48,10 @@ class CurrencyConverterController extends Controller
     {
         $currencyconverters = CurrencyConverter::latest('created_at')->get();
         return view('main', compact('currencyconverters'));
+    }
+    public function destroy($id){
+        $currencyconverter = CurrencyConverter::find($id);
+        $currencyconverter->delete();
+        return redirect('/');
     }
 }

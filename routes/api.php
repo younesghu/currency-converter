@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// This Route is in charge of getting data from my Currency API
 Route::get('/currencies', [CurrencyConverterController::class, 'getall']);
 
-Route::get('/currency', [CurrencyConverterController::class, 'getdata']);
+// Route::get('/currency', [CurrencyConverterController::class, 'getdata']);
