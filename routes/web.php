@@ -24,4 +24,4 @@ Route::post('/add', [CurrencyConverterController::class, 'store']);
 Route::get('/', [CurrencyConverterController::class, 'showhistory']);
 
 // This Route is in charge of deleting a history
-Route::delete('/delete/{currencyconverter}', [CurrencyConverterController::class, 'destroy']);
+Route::delete('/delete/{id}', [CurrencyConverterController::class, 'destroy']);
